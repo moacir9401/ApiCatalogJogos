@@ -32,7 +32,7 @@ namespace CatalogJogos.Controllers.v1
         /// <param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
         /// <param name="quantidade">Indica a quantidade de registro por página. Mínimo 1 e máximo 50</param>
         /// <response code="200">Retorna a lista de jogos</response>
-        /// <returns code="204">Caso não haja jogos</returns>
+        /// <response code="204">Caso não haja jogos</response>
         [HttpGet]
         public async Task<ActionResult<List<JogoViewModel>>> Obter([FromQuery, Range(1, int.MaxValue)] int pagina = 1, [FromQuery, Range(1, 50)] int quantidade = 5)
         {
