@@ -27,3 +27,4 @@ C:\Users\moaci\source\repos\CatalogJogos\CatalogJogos\obj\Debug\net5.0\CatalogJo
 C:\Users\moaci\source\repos\CatalogJogos\CatalogJogos\obj\Debug\net5.0\ref\CatalogJogos.dll
 C:\Users\moaci\source\repos\CatalogJogos\CatalogJogos\obj\Debug\net5.0\CatalogJogos.pdb
 C:\Users\moaci\source\repos\CatalogJogos\CatalogJogos\obj\Debug\net5.0\CatalogJogos.genruntimeconfig.cache
+C:\Users\moaci\source\repos\CatalogJogos\CatalogJogos\bin\Debug\net5.0\CatalogJogos.xml
