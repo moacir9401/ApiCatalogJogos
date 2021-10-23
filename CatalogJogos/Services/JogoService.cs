@@ -37,6 +37,12 @@ namespace CatalogJogos.Services
         {
             var jogo = await _JogoRepository.Obter(idJogo);
 
+            if(jogo == null)
+            {
+                return null;
+            }
+
+
             return new JogoViewModel
             {
                 Id = jogo.Id,
@@ -98,8 +104,6 @@ namespace CatalogJogos.Services
             await _JogoRepository.Atualizar(jogoAlterar);
         }
 
-
-
         public async Task Atualizar(Guid idJogo, double preco)
         {
             var jogo = await _JogoRepository.Obter(idJogo);
@@ -121,8 +125,6 @@ namespace CatalogJogos.Services
 
             await _JogoRepository.Atualizar(jogoAlterar);
         }
-
-
 
         public async Task Remover(Guid idJogo)
         {

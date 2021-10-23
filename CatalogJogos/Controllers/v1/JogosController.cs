@@ -1,4 +1,5 @@
-﻿using CatalogJogos.InputModel;
+﻿using CatalogJogos.Exceptions;
+using CatalogJogos.InputModel;
 using CatalogJogos.Services;
 using CatalogJogos.ViewModel;
 using Microsoft.AspNetCore.Http;
@@ -57,7 +58,7 @@ namespace CatalogJogos.Controllers.v1
 
                 return Ok(jogo);
             }
-            catch (Exception ex)
+            catch (JogoJaCadastratoException ex)
             {
                 return UnprocessableEntity("Já existe um jogo com este nome para esta produtora");
             }
@@ -73,7 +74,7 @@ namespace CatalogJogos.Controllers.v1
 
                 return Ok();
             }
-            catch (Exception)
+            catch (JogoNaoCadastratoException ex)
             {
                 return UnprocessableEntity("Não existe esse jogo");
             }
@@ -90,7 +91,7 @@ namespace CatalogJogos.Controllers.v1
 
                     return Ok();
                 }
-                catch (Exception)
+                catch (JogoNaoCadastratoException ex)
                 {
                     return UnprocessableEntity("Não existe esse jogo");
                 }
@@ -110,7 +111,7 @@ namespace CatalogJogos.Controllers.v1
                 await _jogoService.Remover(idJogo);
                 return Ok();
             }
-            catch (Exception)
+            catch (JogoNaoCadastratoException ex)
             {
 
                 return UnprocessableEntity("Não existe esse jogo");
