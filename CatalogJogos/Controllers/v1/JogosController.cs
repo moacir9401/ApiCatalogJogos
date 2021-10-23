@@ -36,7 +36,7 @@ namespace CatalogJogos.Controllers.v1
             return Ok(jogos);
         }
 
-        [HttpGet("{idJogo: guild}")]
+        [HttpGet("{idJogo:guid}")]
         public async Task<ActionResult<JogoViewModel>> Obter([FromRoute] Guid idJogo)
         {
             var jogos = await _jogoService.Obter(idJogo);
@@ -64,7 +64,7 @@ namespace CatalogJogos.Controllers.v1
             }
         }
 
-        [HttpPut("{idJogo: guild}")]
+        [HttpPut("{idJogo:guid}")]
         public async Task<ActionResult> AtualizarJogo([FromQuery] Guid idJogo, [FromBody] JogoInputModel jogoInputModel)
         {
 
@@ -80,7 +80,7 @@ namespace CatalogJogos.Controllers.v1
             }
         }
 
-        [HttpPatch("{idJogo: guild}/preco/{preco:double}")]
+        [HttpPatch("{idJogo:guid}/preco/{preco:double}")]
         public async Task<ActionResult> AtualizarJogo([FromQuery] Guid idJogo, [FromQuery] double preco)
         {
             try
@@ -103,7 +103,7 @@ namespace CatalogJogos.Controllers.v1
             }
         }
 
-        [HttpDelete("{idJogo: guild}")]
+        [HttpDelete("{idJogo:guid}")]
         public async Task<ActionResult> ApagarJogo([FromQuery] Guid idJogo)
         {
             try
